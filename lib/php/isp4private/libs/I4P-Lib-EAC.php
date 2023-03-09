@@ -7,7 +7,7 @@ class I4PLib_EAC{
     private $file = "";
     function __construct($file){
         // Файл, не найден, сразу дропаем.
-        if (!is_file($file)) return ["status"=>"error","code"=>1,"msg"=>"No file found"];
+        if (!is_file($file)) return array("status"=>"error","code"=>1,"msg"=>"No file found");
         $this->raw = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         $ind = 0; $ip = "def";
         # Начинаем забег по строкам
@@ -24,12 +24,12 @@ class I4PLib_EAC{
             } elseif ($ip != "def") {
                 $this->arr[$ip][$ind][$ex[0]] = $ex[1];
             } else {
-                $this->text .= $fk."\r\n";
+                $this->text .= $fk."\n";
             }
         }
         $this->file = $file;
         # Парсинг закончили возращаем данные.
-        return ["status"=>"success","code"=>0,"msg"=>"Successful!"];
+        return array("status"=>"success","code"=>0,"msg"=>"Successful!");
     }
 
     # Установка значения
@@ -64,9 +64,9 @@ class I4PLib_EAC{
         $d = $this->text."\r\n";
         foreach($this->arr as $ak => $av){
             foreach ($av as $key => $val){
-                $d .= '<VirtualHost '.$ak.' >'."\r\n";
-                foreach ($val as $vk => $vv) $d .= $vk." ".$vv."\r\n";
-                $d .= '</VirtualHost>'."\r\n";
+                $d .= '<VirtualHost '.$ak.' >'."\n";
+                foreach ($val as $vk => $vv) $d .= "\t".$vk." ".$vv."\n";
+                $d .= '</VirtualHost>'."\n";
             }
         }
         $fd = fopen($this->file, 'w');

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mgrdata>
-    <plugin name="i4p_lib_eac" version="1.0.0">
-		<descr lang="en">[Library] ISP4Private - [EAC] EasyApacheConfig | Plugin page: http://isp4private.ru/lib/eac/</descr>
-		<descr lang="ru">[Библиотека] ISP4Private - [EAC] EasyApacheConfig | Страница плагина: http://isp4private.ru/lib/eac/</descr>
+    <plugin name="i4p_lib_eac" version="1.1.0">
 		<description lang="en">[Library] ISP4Private - [EAC] EasyApacheConfig | Plugin page: http://isp4private.ru/lib/eac/</description>
 		<description lang="ru">[Библиотека] ISP4Private - [EAC] EasyApacheConfig | Страница плагина: http://isp4private.ru/lib/eac/</description>
 		<author name="ISP4Private.Ru" contacts="isp4private@gmail.com">ISP4Private.Ru</author>
@@ -11,10 +9,10 @@
 		<manager>ispmgr</manager>
 		<lang>php</lang>
 		<require>dom</require>
-		<depend>i4p_core 1.0.0</depend>
+		<depend>i4p_core 1.1.0</depend>
 		<site>http://isp4private.ru/lib/eac/</site>
 		<name lang="en">[Library] ISP4Private - [EAC] EasyApacheConfig</name>
 		<name lang="ru">[Библиотека] ISP4Private - [EAC] EasyApacheConfig</name>
-		<version>1.0.0</version>
+		<version>1.1.0</version>
 	</plugin>
 </mgrdata>
